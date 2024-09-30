@@ -5,9 +5,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import uniandes.edu.co.proyecto.repositorio.BodegaRepository;
 import uniandes.edu.co.proyecto.repositorio.CiudadRepository;
-import uniandes.edu.co.proyecto.repositorio.SucursalRepository;
 
 @SpringBootApplication
 public class ProyectoApplication implements CommandLineRunner{
