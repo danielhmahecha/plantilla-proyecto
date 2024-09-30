@@ -15,9 +15,9 @@ public class RegistroPK implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "recepciones_id", referencedColumnName = "id")
-    private Recepciones recepciones_id;
+    private Recepcion recepciones_id;
 
-    public RegistroPK(Producto producto_codigo_de_barras, Recepciones recepciones_id) {
+    public RegistroPK(Producto producto_codigo_de_barras, Recepcion recepciones_id) {
         super();
         this.producto_codigo_de_barras = producto_codigo_de_barras;
         this.recepciones_id = recepciones_id;
@@ -31,11 +31,11 @@ public class RegistroPK implements Serializable {
         this.producto_codigo_de_barras = producto_codigo_de_barras;
     }
 
-    public Recepciones getRecepciones_de_productos_id() {
+    public Recepcion getRecepciones_de_productos_id() {
         return recepciones_id;
     }
 
-    public void setRecepciones_de_productos_id(Recepciones recepciones_id) {
+    public void setRecepciones_de_productos_id(Recepcion recepciones_id) {
         this.recepciones_id = recepciones_id;
     }
 

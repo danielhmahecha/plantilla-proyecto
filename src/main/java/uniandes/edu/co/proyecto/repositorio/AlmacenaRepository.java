@@ -15,7 +15,7 @@ public interface AlmacenaRepository extends JpaRepository<Almacena, Integer> {
     @Query(value = "SELECT * FROM almacena", nativeQuery = true)
     Collection<Almacena> darAlmacena();
 
-    @Query(value = "SELECT * FROM almacena WHERE bodega_id = :bodega_id AND producto_codigo_de_barras =: producto_codigo_de_barras", nativeQuery = true)
+    @Query(value = "SELECT * FROM almacena WHERE bodega_id = :bodega_id AND producto_codigo_de_barras = :producto_codigo_de_barras", nativeQuery = true)
     Almacena darAlmacenaPorId(@Param("bodega_id") Integer bodega_id,
             @Param("producto_codigo_de_barras") Integer producto_codigo_de_barras);
 

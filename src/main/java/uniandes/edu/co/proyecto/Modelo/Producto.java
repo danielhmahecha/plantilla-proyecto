@@ -1,6 +1,6 @@
 package uniandes.edu.co.proyecto.modelo;
 
-import java.lang.annotation.Inherited;
+import java.sql.Date;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -34,13 +34,11 @@ public class Producto {
 
         private Date expiracion;
 
-        private 
-
         @ManyToOne
         @JoinColumn (name="categoria_codigo", referencedColumnName="codigo")
         private Categoria categoria_codigo;
 
-        public Producto(String nombre, Integer codigo_de_barras, Integer costo_en_bodega, Integer precio_unitario, String presentacion, String cantidad_presentacion, String unidad, String empacad, Date expiracion, Categoria categoria_codigo)
+        public Producto(String nombre, Integer codigo_de_barras, Integer costo_en_bodega, Integer precio_unitario, String presentacion, String cantidad_presentacion, String unidad, String empacado, Date expiracion, Categoria categoria_codigo)
         {
             this.nombre = nombre;
             this.codigo_de_barras = codigo_de_barras;
@@ -54,8 +52,10 @@ public class Producto {
 
         }
 
-        public Sucursal{
+        public Producto()
+        {
             ;
+
         }
 
         public String getNombre(){
@@ -99,7 +99,7 @@ public class Producto {
         }
 
         public void setNombre(String nombre){
-            thisn.nombre = nombre;
+            this.nombre = nombre;
         }
 
         public void setCodigo_de_barras(Integer codigo_de_barras){

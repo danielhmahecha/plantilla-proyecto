@@ -1,4 +1,4 @@
-/**package uniandes.edu.co.proyecto.repositorio;
+package uniandes.edu.co.proyecto.repositorio;
 
 import java.util.Collection;
 
@@ -36,4 +36,4 @@ public interface VendeRepository extends JpaRepository<Vende,Integer>
 
     @Query(value = "SELECT sucursales.* FROM sucursales INNER JOIN vende on (sucursales.id=vende.sucursal_id) WHERE vende.cantidad > 0 AND vende.producto_codigo_de_barras = :codigo_de_barras", nativeQuery = true)
     Collection<Sucursal> darSucursalesPorProducto(@Param("codigo_de_barras") Integer codigo_de_barras);
-}**/
+}

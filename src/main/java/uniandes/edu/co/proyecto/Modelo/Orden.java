@@ -1,6 +1,6 @@
 package uniandes.edu.co.proyecto.modelo;
 
-import java.lang.annotation.Inherited;
+import java.sql.Date;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -36,9 +36,9 @@ public class Orden {
 
         @ManyToOne
         @JoinColumn (name="recepcion_id", referencedColumnName="id")
-        private Recepciones recepcion_id;
+        private Recepcion recepcion_id;
 
-        public Ordenes(Integer id, Date fecha_esperada, String estado, Proveedor proveedor_nit, Sucursal sucursal_id, Integer cantidad, Integer precio, Recepcion recepcion_id)
+        public Orden(Integer id, Date fecha_esperada, String estado, Proveedor proveedor_nit, Sucursal sucursal_id, Integer cantidad, Integer precio, Recepcion recepcion_id)
         {
             this.id = id;
             this.fecha_esperada = fecha_esperada;
@@ -83,35 +83,35 @@ public class Orden {
             return recepcion_id;
         }
 
-        public voit setId(){
+        public void setId(Integer id){
             this.id = id;
         }
 
-        public void setFechaEsperada(){
+        public void setFechaEsperada(Date fecha_esperada){
             this.fecha_esperada = fecha_esperada;
         }
 
-        public void setEstado(){
+        public void setEstado(String estado){
             this.estado = estado;
         }
 
-        public void setProveedor(){
+        public void setProveedor(Proveedor proveedor_nit){
             this.proveedor_nit = proveedor_nit;
         }
 
-        public void setSucursal(){
+        public void setSucursal(Sucursal sucursal_id){
             this.sucursal_id = sucursal_id;
         }
 
-        public void setCantidad(){
+        public void setCantidad(Integer cantidad){
             this.cantidad = cantidad;
         }
 
-        public void setPrecio(){
+        public void setPrecio(Integer precio){
             this.precio = precio;
         }
 
-        public void setRecepcion(){
+        public void setRecepcion(Recepcion recepcion_id){
             this.recepcion_id = recepcion_id;
         }
         }

@@ -15,9 +15,9 @@ public class ProveePK implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "proovedor_nit", referencedColumnName = "nit")
-    private Proovedor proovedor_nit;
+    private Proveedor proovedor_nit;
 
-    public ProveePK(Producto producto_codigo_de_barras, Proovedor proovedor_nit) {
+    public ProveePK(Producto producto_codigo_de_barras, Proveedor proovedor_nit) {
         super();
         this.producto_codigo_de_barras = producto_codigo_de_barras;
         this.proovedor_nit = proovedor_nit;
@@ -31,11 +31,11 @@ public class ProveePK implements Serializable {
         this.producto_codigo_de_barras = producto_codigo_de_barras;
     }
 
-    public Proovedor getProovedor_nit() {
+    public Proveedor getProovedor_nit() {
         return proovedor_nit;
     }
 
-    public void setProovedor_nit(Proovedor proovedor_nit) {
+    public void setProovedor_nit(Proveedor proovedor_nit) {
         this.proovedor_nit = proovedor_nit;
     }
 

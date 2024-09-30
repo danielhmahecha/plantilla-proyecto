@@ -40,9 +40,9 @@ public class Proveedor {
 
         }
 
-        public Proveedor ({
+        public Proveedor (){
             ;
-        })
+        }
 
         public Integer getNit(){
             return nit;
@@ -64,7 +64,7 @@ public class Proveedor {
             return persona_de_contacto;
         }
 
-        public nit getTelefonoDeContacto(){
+        public Integer getTelefonoDeContacto(){
             return telefono_de_contacto;
         }
 
