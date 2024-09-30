@@ -8,39 +8,27 @@ import jakarta.persistence.ManyToOne;
 
 @Embeddable
 public class ProveePK implements Serializable {
-    @ManyToOne
-    @JoinColumn(name = "producto_nombre", referencedColumnName = "nombre")
-    private Producto productoPorNombre;
 
     @ManyToOne
-    @JoinColumn(name = "producto_codigoDeBarras", referencedColumnName = "código_de_barras")
-    private Producto productoPorCodigoDeBarras;
+    @JoinColumn(name = "producto_codigo_de_barras", referencedColumnName = "codigo_de_barras")
+    private Producto producto_codigo_de_barras;
 
     @ManyToOne
     @JoinColumn(name = "proovedor_nit", referencedColumnName = "nit")
     private Proovedor proovedor_nit;
 
-    public ProveePK(Producto productoPorNombre, Producto productoPorCodigoDeBarras, Proovedor proovedor_nit) {
+    public ProveePK(Producto producto_codigo_de_barras, Proovedor proovedor_nit) {
         super();
-        this.productoPorNombre = productoPorNombre;
-        this.productoPorCodigoDeBarras = productoPorCodigoDeBarras;
+        this.producto_codigo_de_barras = producto_codigo_de_barras;
         this.proovedor_nit = proovedor_nit;
     }
 
-    public Producto getProductoPorNombre() {
-        return productoPorNombre;
-    }
-
-    public void setProductoPorNombre(Producto productoPorNombre) {
-        this.productoPorNombre = productoPorNombre;
-    }
-
     public Producto getProductoPorCodigoDeBarras() {
-        return productoPorCodigoDeBarras;
+        return producto_codigo_de_barras;
     }
 
-    public void setProductoPorCodigoDeBarras(Producto productoPorCodigoDeBarras) {
-        this.productoPorCodigoDeBarras = productoPorCodigoDeBarras;
+    public void setProductoPorCodigoDeBarras(Producto producto_codigo_de_barras) {
+        this.producto_codigo_de_barras = producto_codigo_de_barras;
     }
 
     public Proovedor getProovedor_nit() {

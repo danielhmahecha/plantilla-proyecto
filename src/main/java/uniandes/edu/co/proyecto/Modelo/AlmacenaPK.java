@@ -12,46 +12,33 @@ import jakarta.persistence.ManyToOne;
 public class AlmacenaPK implements Serializable {
 
     @ManyToOne
-    @JoinColumn(name = "producto_nombre", referencedColumnName = "nombre")
-    private Producto productoPorNombre;
-
-    @ManyToOne
-    @JoinColumn(name = "producto_codigoDeBarras", referencedColumnName = "código_de_barras")
-    private Producto productoPorCodigoDeBarras;
+    @JoinColumn(name = "producto_codigo_de_barras", referencedColumnName = "codigo_de_barras")
+    private Producto producto_codigo_de_barras;
 
     @ManyToOne
     @JoinColumn(name = "bodega_id", referencedColumnName = "id")
-    private Bodega id_bodega;
+    private Bodega bodega_id;
 
-    public AlmacenaPK(Producto productoPorNombre, Producto productoPorCodigoDeBarras, Bodega id_bodega) {
+    public AlmacenaPK(Producto producto_codigo_de_barras, Bodega bodega_id) {
         super();
-        this.productoPorNombre = productoPorNombre;
-        this.productoPorCodigoDeBarras = productoPorCodigoDeBarras;
-        this.id_bodega = id_bodega;
-    }
-
-    public Producto getProductoPorNombre() {
-        return productoPorNombre;
-    }
-
-    public void setProductoPorNombre(Producto productoPorNombre) {
-        this.productoPorNombre = productoPorNombre;
+        this.producto_codigo_de_barras = producto_codigo_de_barras;
+        this.bodega_id = bodega_id;
     }
 
     public Producto getProductoPorCodigoDeBarras() {
-        return productoPorCodigoDeBarras;
+        return producto_codigo_de_barras;
     }
 
-    public void setProductoPorCodigoDeBarras(Producto productoPorCodigoDeBarras) {
-        this.productoPorCodigoDeBarras = productoPorCodigoDeBarras;
+    public void setProductoPorCodigoDeBarras(Producto producto_codigo_de_barras) {
+        this.producto_codigo_de_barras = producto_codigo_de_barras;
     }
 
     public Bodega getId_bodega() {
-        return id_bodega;
+        return bodega_id;
     }
 
-    public void setId_bodega(Bodega id_bodega) {
-        this.id_bodega = id_bodega;
+    public void setId_bodega(Bodega bodega_id) {
+        this.bodega_id = bodega_id;
     }
 
 }

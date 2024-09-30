@@ -12,9 +12,8 @@ public class Categoria {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-
-    private Integer id;
     private Integer codigo;
+
     private String nombre;
     private String descripcion;
     private String almacenamiento;
@@ -23,19 +22,10 @@ public class Categoria {
         ;
     }
 
-    public Categoria(Integer codigo, String nombre, String descripcion, String almacenamiento) {
-        this.codigo = codigo;
+    public Categoria(String nombre, String descripcion, String almacenamiento) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.almacenamiento = almacenamiento;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public Integer getCodigo() {
