@@ -23,8 +23,14 @@ public class TienePK implements Serializable {
             this.producto_codigo_de_barras = producto_codigo_de_barras;
             this.orden_de_compra_id = orden_de_compra_id;
 
+    @ManyToOne
+    @JoinColumn(name = "orden_de_compra_id", referencedColumnName = "id")
+    private Orden orden_de_compra_id;
 
-        }
+    public TienePK() {
+        super();
+        this.producto_codigo_de_barras = producto_codigo_de_barras;
+        this.orden_de_compra_id = orden_de_compra_id;
 
         public Producto getProductoCodigoDeBarras(){
             return producto_codigo_de_barras;
@@ -42,6 +48,8 @@ public class TienePK implements Serializable {
             this.orden_de_compra_id = orden_de_compra_id;
         }
 
-        }
+    public void setOrdenDeCompraId(Integer orden_de_compra_id) {
+        this.orden_de_compra_id = orden_de_compra_id;
+    }
 
-    
+}
