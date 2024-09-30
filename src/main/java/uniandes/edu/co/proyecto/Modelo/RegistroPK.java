@@ -10,33 +10,33 @@ import jakarta.persistence.ManyToOne;
 public class RegistroPK implements Serializable {
 
     @ManyToOne
-    @JoinColumn(name = "productos_código_de_barras", referencedColumnName = "código_de_barras")
-    private Producto productos_código_de_barras;
+    @JoinColumn(name = "producto_codigo_de_barras", referencedColumnName = "codigo_de_barras")
+    private Producto producto_codigo_de_barras;
 
     @ManyToOne
-    @JoinColumn(name = "recepciones_de_productos_id", referencedColumnName = "id")
-    private Recepciones recepciones_de_productos_id;
+    @JoinColumn(name = "recepciones_id", referencedColumnName = "id")
+    private Recepciones recepciones_id;
 
-    public RegistroPK(Producto productos_código_de_barras, Recepciones recepciones_de_productos_id) {
+    public RegistroPK(Producto producto_codigo_de_barras, Recepciones recepciones_id) {
         super();
-        this.productos_código_de_barras = productos_código_de_barras;
-        this.recepciones_de_productos_id = recepciones_de_productos_id;
+        this.producto_codigo_de_barras = producto_codigo_de_barras;
+        this.recepciones_id = recepciones_id;
     }
 
     public Producto getProductos_código_de_barras() {
-        return productos_código_de_barras;
+        return producto_codigo_de_barras;
     }
 
-    public void setProductos_código_de_barras(Producto productos_código_de_barras) {
-        this.productos_código_de_barras = productos_código_de_barras;
+    public void setProductos_código_de_barras(Producto producto_codigo_de_barras) {
+        this.producto_codigo_de_barras = producto_codigo_de_barras;
     }
 
     public Recepciones getRecepciones_de_productos_id() {
-        return recepciones_de_productos_id;
+        return recepciones_id;
     }
 
-    public void setRecepciones_de_productos_id(Recepciones recepciones_de_productos_id) {
-        this.recepciones_de_productos_id = recepciones_de_productos_id;
+    public void setRecepciones_de_productos_id(Recepciones recepciones_id) {
+        this.recepciones_id = recepciones_id;
     }
 
 }
