@@ -1,4 +1,4 @@
-/**package uniandes.edu.co.proyecto.modelo;
+package uniandes.edu.co.proyecto.modelo;
 
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
