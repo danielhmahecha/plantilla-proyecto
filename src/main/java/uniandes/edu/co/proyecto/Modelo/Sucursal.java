@@ -55,7 +55,7 @@ public class Sucursal
         return nombre;
     }
 
-    public Ciudad getCiudad_código() {
+    public Ciudad getCiudad_codigo() {
         return ciudad_codigo;
     }
 

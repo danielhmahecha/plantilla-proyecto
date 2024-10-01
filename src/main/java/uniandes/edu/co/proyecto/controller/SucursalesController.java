@@ -21,7 +21,7 @@ public class SucursalesController
     {
         try
         {
-            sucursalRepository.insertarSucursal(sucursal.getDireccion(), sucursal.getTelefono(), sucursal.getNombre(), sucursal.getCiudad_código().getCodigo());
+            sucursalRepository.insertarSucursal(sucursal.getDireccion(), sucursal.getTelefono(), sucursal.getNombre(), sucursal.getCiudad_codigo().getCodigo());
             return new ResponseEntity<>("Sucursal creada exitosamente.",HttpStatus.CREATED);
         }
         catch (Exception e)

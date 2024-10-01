@@ -34,6 +34,8 @@ public interface VendeRepository extends JpaRepository<Vende,Integer>
     @Query(value = "INSERT INTO vende (sucursal_id, producto_codigo_de_barras, reorden, cantidad) VALUES (:sucursal_id, :producto_codigo_de_barras, :reorden, :cantidad)", nativeQuery = true)
     void insertarVende(@Param("sucursal_id") Integer sucursal_id, @Param("producto_codigo_de_barras") Integer producto_codigo_de_barras,@Param("reorden") Integer reorden, @Param("cantidad") Integer cantidad);
 
-    @Query(value = "SELECT sucursales.* FROM sucursales INNER JOIN vende on (sucursales.id=vende.sucursal_id) WHERE vende.cantidad > 0 AND vende.producto_codigo_de_barras = :codigo_de_barras", nativeQuery = true)
-    Collection<Sucursal> darSucursalesPorProducto(@Param("codigo_de_barras") Integer codigo_de_barras);
+    @Query(value = "SELECT sucursales.nombre\r\n" +
+    "FROM sucursales , vende \r\n" +
+    "WHERE sucursales.id = vende.sucursal_id And vende.cantidad >0 and vende.producto_codigo_de_barras = 2", nativeQuery = true)
+    Collection<String> darSucursalesPorProducto(@Param("codigo_de_barras") Integer codigo_de_barras);
 }

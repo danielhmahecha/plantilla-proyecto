@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import uniandes.edu.co.proyecto.modelo.Sucursal;
 import uniandes.edu.co.proyecto.repositorio.VendeRepository;
 
 @RestController
@@ -19,11 +18,11 @@ public class VendeController
     private VendeRepository vendeRepository;
 
     @GetMapping("/vende/consulta")
-    public ResponseEntity<Collection<Sucursal>> vendeConsulta(@RequestParam(required = false) Integer codigo_de_barras)
+    public ResponseEntity<Collection<String>> vendeConsulta(@RequestParam(required = false) Integer codigo_de_barras)
     {
         try
         {
-            Collection<Sucursal> sucursales = vendeRepository.darSucursalesPorProducto(codigo_de_barras);
+            Collection<String> sucursales = vendeRepository.darSucursalesPorProducto(codigo_de_barras);
             return ResponseEntity.ok(sucursales);
         }
         catch (Exception e)

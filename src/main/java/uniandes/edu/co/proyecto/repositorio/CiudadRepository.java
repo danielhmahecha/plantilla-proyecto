@@ -28,6 +28,8 @@ public interface CiudadRepository extends JpaRepository<Ciudad, Integer>
     @Query(value="UPDATE ciudades SET nombre = :nombre WHERE codigo = :codigo",nativeQuery = true)
     void actualizarCiudad(@Param("codigo") Integer codigo,@Param("nombre") String nombre);
 
+    @Modifying
+    @Transactional
     @Query(value="DELETE FROM ciudades WHERE codigo= :codigo",nativeQuery = true)
     void eliminarCiudad(@Param("codigo") Integer codigo);
 }
