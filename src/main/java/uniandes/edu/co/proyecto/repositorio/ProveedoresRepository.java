@@ -5,18 +5,17 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
-import uniandes.edu.co.proyecto.modelo.Proveedores;
+import uniandes.edu.co.proyecto.modelo.Proveedor;
 
-import java.sql.Date;
 import java.util.Collection;
 
-public interface ProveedoresRepository  extends JpaRepository<Proveedores, Integer>{
+public interface ProveedoresRepository  extends JpaRepository<Proveedor, Integer>{
 
     @Query(value = "SELECT * FROM proveedores", nativeQuery = true)
-    Collection<Proveedores> darProveedores();
+    Collection<Proveedor> darProveedores();
 
     @Query(value = "SELECT * FROM proveedores WHERE nit = :nit", nativeQuery = true)
-    Frecuentan darProveedoresPorId(@Param("nit") Integer nit);
+    Proveedor darProveedoresPorId(@Param("nit") Integer nit);
 
     @Modifying
     @Transactional

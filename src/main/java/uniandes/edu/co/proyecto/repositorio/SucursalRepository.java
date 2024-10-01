@@ -32,4 +32,13 @@ public interface SucursalRepository extends JpaRepository<Sucursal,Integer>
     @Transactional
     @Query(value = "INSERT INTO sucursales (direccion,telefono,nombre,ciudad_codigo) VALUES(:direccion,:telefono,:nombre,:ciudad_codigo)",nativeQuery = true)
     void insertarSucursal(@Param("direccion") String direccion,@Param("telefono") Integer telefono, @Param("nombre") String nombre, @Param("ciudad_codigo") Integer ciudad_codigo);
+
+    @Query(value = "SELECT s.* " +
+            "FROM sucursales s " +
+            "JOIN inventario_bodega ib ON ib.bodega_id = s.bodega_id " +
+            "JOIN productos p ON ib.producto_codigo_de_barras = p.codigo_de_barras " +
+            "WHERE p.codigo_de_barras = :codigo_de_barras OR p.nombre = :nombre", nativeQuery = true)
+    Collection<Sucursal> encontrarSucursalesPorProducto(@Param("codigo_de_barras") Integer codigo_de_barras,
+            @Param("nombre") String nombre);
+
 }
